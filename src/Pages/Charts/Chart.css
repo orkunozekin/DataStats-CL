@@ -1,0 +1,11 @@
+.line-chart-wrapper {
+  padding: 0.2vh 4vw;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .line-chart-wrapper {
+    padding: 1.2vh 15vh;
+    margin: 0 auto;
+  }
+}
