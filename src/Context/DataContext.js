@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react'
 
-import MockData from '../MockData/MockData'
+import { ChartData } from '../MockData/MockData'
 
 const DataContext = React.createContext()
 
@@ -13,7 +13,7 @@ export const DataProvider = ({ children }) => {
   const [header, setHeader] = useState('')
 
   const getData = () => {
-    const { labels, datasets, header } = MockData
+    const { labels, datasets, header } = ChartData
     setLabels(labels)
     setDataSets(datasets)
     setHeader(header)
@@ -28,7 +28,6 @@ export const DataProvider = ({ children }) => {
     dataSets,
     header
   }
-
 
 
   return (
