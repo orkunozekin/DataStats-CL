@@ -18,7 +18,7 @@ const TableFormat = () => {
   }
 
   return (
-    <div>
+    <div className="table-wrapper">
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>

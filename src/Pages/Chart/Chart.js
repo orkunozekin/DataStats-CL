@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Line } from 'react-chartjs-2'
 import { useDataContext } from '../../Context/DataContext';
 
@@ -6,7 +6,7 @@ import './Chart.css'
 
 const Chart = () => {
 
-  const { labels, dataSets, header } = useDataContext()
+  const { labels, dataSets } = useDataContext()
 
   const data = {
     labels: labels,
@@ -28,7 +28,6 @@ const Chart = () => {
 
   return (
     <div className="line-chart-wrapper">
-      <h2>{header}</h2>
       <Line data={data} options={options} />
     </div>
   )
