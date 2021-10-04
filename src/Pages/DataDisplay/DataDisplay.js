@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Line } from 'react-chartjs-2'
+import ToggleBtn from '../../Components/ToggleBtn/ToggleBtn';
 import { useDataContext } from '../../Context/DataContext';
 import Chart from '../Chart/Chart';
 import TableFormat from '../TableFormat/TableFormat';
@@ -8,20 +9,16 @@ import './DataDisplay.css'
 
 const DataDisplay = () => {
 
+  const { header } = useDataContext()
 
   const [option, setOption] = useState('Graph')
-  const formatOptions = ['Graph', 'Table']
-
 
   return (
-    <div className="line-chart-wrapper">
-      <h1>Data Stats</h1>
-      <select className="dropdown" name="format options" onChange={(e) => setOption(e.target.value)}>
-        {formatOptions.map((eachOption, idx) => (
-          <option key={idx} value={eachOption} >{eachOption}</option>
-        )
-        )}
-      </select>
+    <div className="data-display-wrapper">
+      <header>
+        <h1>{header}</h1>
+        <ToggleBtn setOption={setOption} />
+      </header>
       {option === 'Graph' && <Chart />}
       {option === 'Table' && <TableFormat />}
     </div>
